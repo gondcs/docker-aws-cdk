@@ -1,5 +1,5 @@
-ARG ALPINE_VERSION=3.13
-ARG AWS_CDK_VERSION=2.44.0
+ARG ALPINE_VERSION=3.18
+ARG AWS_CDK_VERSION=2.81.0
 FROM alpine:${ALPINE_VERSION}
 
 RUN apk -v --no-cache --update add \
@@ -23,7 +23,7 @@ VOLUME [ "/root/.aws" ]
 VOLUME [ "/opt/app" ]
 
 # Allow for caching python modules
-VOLUME ["/usr/lib/python3.8/site-packages/"]
+VOLUME ["/usr/lib/python3.11/site-packages/"]
 
 WORKDIR /opt/app
 
